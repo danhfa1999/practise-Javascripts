@@ -88,3 +88,9 @@
       document.getElementById('item-count').textContent = total.length;
    }
 })();
+(function () {
+   const removeItem = document.getElementById("cart-item-remove");
+   removeItem.addEventListener('click', function removeItem() {
+   });
+})
+();
