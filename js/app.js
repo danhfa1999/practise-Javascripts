@@ -91,6 +91,10 @@
 (function () {
    const removeItem = document.getElementById("cart-item-remove");
    removeItem.addEventListener('click', function removeItem() {
+      const listItem = document.querySelectorAll(".cart-item-remove");
+      for (var i of listItem) {
+         console.log(i);
+      }
    });
 })
 ();
