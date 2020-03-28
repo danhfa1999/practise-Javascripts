@@ -88,3 +88,4 @@
       document.getElementById('item-count').textContent = total.length;
    }
 })();
+function delTotal(){}
