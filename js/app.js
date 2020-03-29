@@ -15,12 +15,12 @@
 (function () {
    
    const carBtn = document.querySelectorAll('.store-item-icon');
-   
    carBtn.forEach(function (btn) {
       btn.addEventListener('click', function (event) {
          //console.log(event.target);
          if (event.target.parentElement.classList.contains("store-item-icon"))
          {
+            console.log(event.target.parentElement.classList.contains("store-item-icon"));
             let fullPath = event.target.parentElement.previousElementSibling.src;
             let pos = fullPath.indexOf("img")+3;
             let parPath = fullPath.slice(pos);
@@ -37,8 +37,6 @@
             item.price = finalPrice;
 
 
-
-
             const cartItem = document.createElement("div");
             cartItem.classList.add(
                "cart-item",
@@ -47,7 +45,6 @@
                "text-capitalize",
                "my-3"
             );
-
             //  <!-- cart item -->
             cartItem.innerHTML = `
           <img src="${item.img}" class="img-fluid rounded-circle" id="item-img" alt="">
@@ -88,13 +85,13 @@
       document.getElementById('item-count').textContent = total.length;
    }
 })();
+
 (function () {
-   const removeItem = document.getElementById("cart-item-remove");
-   removeItem.addEventListener('click', function removeItem() {
-      const listItem = document.querySelectorAll(".cart-item-remove");
-      for (var i of listItem) {
-         console.log(i);
-      }
-   });
-})
-();
+   const removeAllItem = document.querySelectorAll(".cart-item-remove");
+   removeAllItem.forEach(function (rem) {
+      rem.addEventListener('click', function (event) {
+         if (event.target.parentElement.classList.contains("cart-item-remove")) {
+         }
+      })
+   })
+})();
